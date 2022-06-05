@@ -7,20 +7,20 @@ use Symfony\Component\Validator\Constraints as Assert;
 final class AddressDTO
 {
     /**
-     * @Assert\NotNull()
-     * @Assert\Length(min="3")
+     * @Assert\NotNull(groups={"Default", "newAddress"})
+     * @Assert\Length(groups={"Default", "newAddress"}, min="3")
      */
     public string $street;
 
     /**
-     * @Assert\NotNull()
-     * @Assert\Regex(pattern="^[0-9]{5}")
+     * @Assert\NotNull(groups={"Default", "newAddress"})
+     * @Assert\Regex(groups={"Default", "newAddress"}, pattern="^[0-9]{5}")
      */
     public string $zip;
 
     /**
-     * @Assert\NotNull()
-     * @Assert\Length(min="5")
+     * @Assert\NotNull(groups={"Default", "newAddress"})
+     * @Assert\Length(groups={"Default", "newAddress"}, min="5")
      */
     public string $city;
 }
